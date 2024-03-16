@@ -1,0 +1,769 @@
+﻿<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="2023.2.2">
+  <Settings>
+    <Param val="3" valType="str" updates="None" name="Audio latency priority"/>
+    <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
+    <Param val="" valType="str" updates="None" name="Completed URL"/>
+    <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
+    <Param val="u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code" updates="None" name="Data filename"/>
+    <Param val="True" valType="bool" updates="None" name="Enable Escape"/>
+    <Param val="" valType="str" updates="None" name="End Message"/>
+    <Param val="{'participant':'f&quot;{randint(0, 999999):06.0f}&quot;', 'session':'001'}" valType="code" updates="None" name="Experiment info"/>
+    <Param val="True" valType="bool" updates="None" name="Force stereo"/>
+    <Param val="True" valType="bool" updates="None" name="Full-screen window"/>
+    <Param val="" valType="str" updates="None" name="HTML path"/>
+    <Param val="" valType="str" updates="None" name="Incomplete URL"/>
+    <Param val="testMonitor" valType="str" updates="None" name="Monitor"/>
+    <Param val="[]" valType="list" updates="None" name="Resources"/>
+    <Param val="False" valType="bool" updates="None" name="Save csv file"/>
+    <Param val="False" valType="bool" updates="None" name="Save excel file"/>
+    <Param val="False" valType="bool" updates="None" name="Save hdf5 file"/>
+    <Param val="True" valType="bool" updates="None" name="Save log file"/>
+    <Param val="True" valType="bool" updates="None" name="Save psydat file"/>
+    <Param val="True" valType="bool" updates="None" name="Save wide csv file"/>
+    <Param val="1" valType="num" updates="None" name="Screen"/>
+    <Param val="True" valType="bool" updates="None" name="Show info dlg"/>
+    <Param val="False" valType="bool" updates="None" name="Show mouse"/>
+    <Param val="height" valType="str" updates="None" name="Units"/>
+    <Param val="" valType="str" updates="None" name="Use version"/>
+    <Param val="(1024, 768)" valType="list" updates="None" name="Window size (pixels)"/>
+    <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+    <Param val="" valType="str" updates="None" name="backgroundImg"/>
+    <Param val="avg" valType="str" updates="None" name="blendMode"/>
+    <Param val="{'thisRow.t': 'priority.CRITICAL', 'expName': 'priority.LOW'}" valType="dict" updates="None" name="colPriority"/>
+    <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+    <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+    <Param val="100.1.1.1" valType="str" updates="None" name="elAddress"/>
+    <Param val="FILTER_LEVEL_2" valType="str" updates="None" name="elDataFiltering"/>
+    <Param val="FILTER_LEVEL_OFF" valType="str" updates="None" name="elLiveFiltering"/>
+    <Param val="EYELINK 1000 DESKTOP" valType="str" updates="None" name="elModel"/>
+    <Param val="ELLIPSE_FIT" valType="str" updates="None" name="elPupilAlgorithm"/>
+    <Param val="PUPIL_AREA" valType="str" updates="None" name="elPupilMeasure"/>
+    <Param val="1000" valType="num" updates="None" name="elSampleRate"/>
+    <Param val="False" valType="bool" updates="None" name="elSimMode"/>
+    <Param val="RIGHT_EYE" valType="str" updates="None" name="elTrackEyes"/>
+    <Param val="PUPIL_CR_TRACKING" valType="str" updates="None" name="elTrackingMode"/>
+    <Param val="experiment" valType="str" updates="None" name="expName"/>
+    <Param val="on Sync" valType="str" updates="None" name="exportHTML"/>
+    <Param val="None" valType="str" updates="None" name="eyetracker"/>
+    <Param val="127.0.0.1" valType="str" updates="None" name="gpAddress"/>
+    <Param val="4242" valType="num" updates="None" name="gpPort"/>
+    <Param val="ioHub" valType="str" updates="None" name="keyboardBackend"/>
+    <Param val="exp" valType="code" updates="None" name="logging level"/>
+    <Param val="MIDDLE_BUTTON" valType="list" updates="None" name="mgBlink"/>
+    <Param val="CONTINUOUS" valType="str" updates="None" name="mgMove"/>
+    <Param val="0.5" valType="num" updates="None" name="mgSaccade"/>
+    <Param val="0.6" valType="num" updates="None" name="plConfidenceThreshold"/>
+    <Param val="True" valType="bool" updates="None" name="plPupilCaptureRecordingEnabled"/>
+    <Param val="" valType="str" updates="None" name="plPupilCaptureRecordingLocation"/>
+    <Param val="127.0.0.1" valType="str" updates="None" name="plPupilRemoteAddress"/>
+    <Param val="50020" valType="num" updates="None" name="plPupilRemotePort"/>
+    <Param val="1000" valType="num" updates="None" name="plPupilRemoteTimeoutMs"/>
+    <Param val="False" valType="bool" updates="None" name="plPupillometryOnly"/>
+    <Param val="psychopy_iohub_surface" valType="str" updates="None" name="plSurfaceName"/>
+    <Param val="time" valType="str" updates="None" name="sortColumns"/>
+    <Param val="" valType="str" updates="None" name="tbLicenseFile"/>
+    <Param val="" valType="str" updates="None" name="tbModel"/>
+    <Param val="60" valType="num" updates="None" name="tbSampleRate"/>
+    <Param val="" valType="str" updates="None" name="tbSerialNo"/>
+    <Param val="pyglet" valType="str" updates="None" name="winBackend"/>
+  </Settings>
+  <Routines>
+    <Routine name="baseline">
+      <RoutineSettingsComponent name="baseline" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="baseline" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="baseline_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="Math.random.shuffle(possible_positions);&amp;#10;[pos_baseline_circle1, pos_baseline_circle2, pos_baseline_circle3, pos_baseline_target] = possible_positions;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="random.shuffle(possible_positions)&amp;#10;pos_baseline_circle1, pos_baseline_circle2, pos_baseline_circle3, pos_baseline_target = possible_positions&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="baseline_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <PolygonComponent name="fixation" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="fixation" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="cross" valType="str" updates="None" name="shape"/>
+        <Param val="fixation_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="baseline_circle1" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="baseline_circle1" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_baseline_circle1" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="circle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="baseline_circle2" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="$color" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="$color" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="baseline_circle2" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_baseline_circle2" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="circle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="baseline_circle3" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="baseline_circle3" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_baseline_circle3" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="circle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="baseline_target" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="baseline_target" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_baseline_target" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="rectangle" valType="str" updates="None" name="shape"/>
+        <Param val="rectangle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <MouseComponent name="baseline_response" plugin="None">
+        <Param val="baseline_target" valType="list" updates="constant" name="clickable"/>
+        <Param val="" valType="list" updates="constant" name="correctAns"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="valid click" valType="str" updates="constant" name="forceEndRoutineOnPress"/>
+        <Param val="baseline_response" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="constant" name="newClicksOnly"/>
+        <Param val="on click" valType="str" updates="None" name="saveMouseState"/>
+        <Param val="name," valType="list" updates="constant" name="saveParamsClickable"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="mouse onset" valType="str" updates="constant" name="timeRelativeTo"/>
+      </MouseComponent>
+    </Routine>
+    <Routine name="load_variables">
+      <RoutineSettingsComponent name="load_variables" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="load_variables" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="code" plugin="None">
+        <Param val="# variables that are constant for the experiment&amp;#10;import random&amp;#10;from numpy.random import choice&amp;#10;&amp;#10;fixation_size = (15, 15)&amp;#10;circle_size = (70,70)&amp;#10;rectangle_size = (70,70)&amp;#10;color = &quot;green&quot;&amp;#10;colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]&amp;#10;image_size = (300, 300)&amp;#10;possible_positions = [(0,400), (0,-400), (400, 0), (-400, 0)]" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="import * as random from 'random';&amp;#10;import {choice} from 'numpy/random';&amp;#10;fixation_size = [15, 15];&amp;#10;circle_size = [70, 70];&amp;#10;rectangle_size = [70, 70];&amp;#10;color = &quot;green&quot;;&amp;#10;colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];&amp;#10;image_size = [300, 300];&amp;#10;possible_positions = [[0, 400], [0, (- 400)], [400, 0], [(- 400), 0]];&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="distractor_color = &quot;&quot;&amp;#10;target_color = &quot;&quot;&amp;#10;correct_response = &quot;&quot;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="distractor_color = &quot;&quot;;&amp;#10;target_color = &quot;&quot;;&amp;#10;correct_response = &quot;&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="action">
+      <RoutineSettingsComponent name="action" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="action" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="action_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="Math.random.shuffle(possible_positions);&amp;#10;[pos_action_circle1, pos_action_circle2, pos_action_circle3, pos_action_target] = possible_positions;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="random.shuffle(possible_positions)&amp;#10;pos_action_circle1, pos_action_circle2, pos_action_circle3, pos_action_target = possible_positions&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="action_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <PolygonComponent name="action_fixation" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="action_fixation" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="cross" valType="str" updates="None" name="shape"/>
+        <Param val="fixation_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="action_circle1" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="action_circle1" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_action_circle1" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="circle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="action_circle2" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="$color" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="$color" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="action_circle2" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_action_circle2" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="circle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="action_circle3" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="action_circle3" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_action_circle3" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="circle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="action_target" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="action_target" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_action_target" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="rectangle" valType="str" updates="None" name="shape"/>
+        <Param val="rectangle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <MouseComponent name="action_response" plugin="None">
+        <Param val="action_target" valType="list" updates="constant" name="clickable"/>
+        <Param val="" valType="list" updates="constant" name="correctAns"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="valid click" valType="str" updates="constant" name="forceEndRoutineOnPress"/>
+        <Param val="action_response" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="constant" name="newClicksOnly"/>
+        <Param val="on click" valType="str" updates="None" name="saveMouseState"/>
+        <Param val="name," valType="list" updates="constant" name="saveParamsClickable"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="mouse onset" valType="str" updates="constant" name="timeRelativeTo"/>
+      </MouseComponent>
+      <ImageComponent name="action_distractor" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
+        <Param val="False" valType="bool" updates="constant" name="flipVert"/>
+        <Param val="$image" valType="file" updates="set every repeat" name="image"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="" valType="str" updates="constant" name="mask"/>
+        <Param val="action_distractor" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="image_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="128" valType="num" updates="constant" name="texture resolution"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+      </ImageComponent>
+    </Routine>
+    <Routine name="perception">
+      <RoutineSettingsComponent name="perception" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="perception" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="perception_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="Math.random.shuffle(possible_positions);&amp;#10;[pos_perception_circle1, pos_perception_circle2, pos_perception_circle3, pos_perception_target] = possible_positions;&amp;#10;target_color = choice(colors);&amp;#10;distractor_color = choice(colors);&amp;#10;psychoJS.experiment.addData(&quot;target color&quot;, target_color);&amp;#10;psychoJS.experiment.addData(&quot;distractor color&quot;, distractor_color);&amp;#10;if ((target_color === &quot;red&quot;)) {&amp;#10;    correct_response = &quot;r&quot;;&amp;#10;} else {&amp;#10;    if ((target_color === &quot;green&quot;)) {&amp;#10;        correct_response = &quot;g&quot;;&amp;#10;    } else {&amp;#10;        if ((target_color === &quot;blue&quot;)) {&amp;#10;            correct_response = &quot;b&quot;;&amp;#10;        } else {&amp;#10;            console.log(&quot;how the fuck is target color anything other than red, green or blue&quot;);&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="random.shuffle(possible_positions)&amp;#10;pos_perception_circle1, pos_perception_circle2, pos_perception_circle3, pos_perception_target = possible_positions&amp;#10;target_color = choice(colors)&amp;#10;distractor_color = choice(colors)&amp;#10;thisExp.addData(&quot;target color&quot;, target_color)&amp;#10;thisExp.addData(&quot;distractor color&quot;, distractor_color)&amp;#10;&amp;#10;if(target_color == &quot;red&quot;):&amp;#10;    correct_response = 'r'&amp;#10;elif (target_color == &quot;green&quot;):&amp;#10;    correct_response = &quot;g&quot;&amp;#10;elif (target_color == &quot;blue&quot;):&amp;#10;    correct_response = &quot;b&quot;&amp;#10;else:&amp;#10;    print(&quot;how the fuck is target color anything other than red, green or blue&quot;)&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="perception_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <PolygonComponent name="perception_fixation" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="perception_fixation" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="cross" valType="str" updates="None" name="shape"/>
+        <Param val="fixation_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="perception_circle1" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="perception_circle1" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_perception_circle1" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="circle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="perception_circle2" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="$distractor_color" valType="color" updates="set every repeat" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="$distractor_color" valType="color" updates="set every repeat" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="perception_circle2" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_perception_circle2" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="circle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="perception_circle3" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="perception_circle3" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_perception_circle3" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="circle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <PolygonComponent name="perception_target" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="$target_color" valType="color" updates="set every repeat" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="$target_color" valType="color" updates="set every repeat" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="perception_target" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="pos_perception_target" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="rectangle" valType="str" updates="None" name="shape"/>
+        <Param val="rectangle_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <ImageComponent name="perception_distractor" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
+        <Param val="False" valType="bool" updates="constant" name="flipVert"/>
+        <Param val="$image" valType="file" updates="set every repeat" name="image"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="" valType="str" updates="constant" name="mask"/>
+        <Param val="perception_distractor" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="image_size" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="128" valType="num" updates="constant" name="texture resolution"/>
+        <Param val="pix" valType="str" updates="None" name="units"/>
+      </ImageComponent>
+      <KeyboardComponent name="perception_response" plugin="None">
+        <Param val="'r', 'g', 'b'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="$correct_response" valType="str" updates="constant" name="correctAns"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="perception_response" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="2.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="8.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="True" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="load_variables"/>
+    <LoopInitiator loopType="TrialHandler" name="baseline_loop">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="name" updates="None" val="baseline_loop" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="baseline"/>
+    <LoopTerminator name="baseline_loop"/>
+    <LoopInitiator loopType="TrialHandler" name="action_loop">
+      <Param name="Selected rows" updates="None" val="$choice(268, size = 1, replace = False)" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('image', 'LowA(Neutral)/1450.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/1670.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/1812.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2070.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2102.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2104.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2153.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2190.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2200.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2205.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2215.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2221.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2235.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2270.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2273.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2312.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2320.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2377.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2383.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2396.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2397.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2411.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2440.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2489.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2491.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2493.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2495.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2499.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2506.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2512.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2513.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2516.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2518.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2530.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2560.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2570.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2580.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2593.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2620.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2695.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2720.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2745.1.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2840.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2850.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2870.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2890.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2900.2.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2980.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/4561.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/4622.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/5875.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7004.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7006.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7010.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7014.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7016.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7019.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7020.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7025.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7030.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7031.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7032.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7034.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7036.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7040.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7041.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7050.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7052.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7057.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7060.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7100.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7130.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7140.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7150.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7185.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7187.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7217.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7234.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7235.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7300.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7365.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7509.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7513.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7705.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7710.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7950.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9210.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9260.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9700.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'NegativeHA/2703.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/2811.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3000.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3001.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3005.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3010.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3015.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3016.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3030.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3051.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3053.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3059.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3060.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3062.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3063.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3064.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3068.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3069.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3071.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3080.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3100.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3101.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3102.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3103.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3110.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3120.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3130.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3131.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3140.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3150.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3168.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3170.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3180.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3191.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3195.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3225.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3261.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3266.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3350.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3400.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3500.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3530.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3550.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6021.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6022.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6212.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6243.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6313.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6315.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6350.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6360.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6415.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6520.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6540.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6560.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6563.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6570.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6821.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9040.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9075.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9163.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9183.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9185.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9187.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9252.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9253.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9254.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9322.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9325.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9326.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9405.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9410.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9412.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9413.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9414.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9420.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9428.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9433.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9570.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9571.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9635.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9800.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9810.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9902.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9908.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9910.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9911.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9921.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9940.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'PositiveHA/1650.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2208.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2209.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2216.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2300.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2347.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2389.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4007.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4220.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4225.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4290.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4311.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4490.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4597.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4599.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4607.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4608.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4611.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4626.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4643.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4645.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4650.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4651.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4652.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4653.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4656.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4658.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4659.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4660.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4664.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4666.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4668.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4670.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4672.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4676.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4677.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4680.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4681.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4683.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4687.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4689.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4690.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4693.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4694.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4695.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4697.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4698.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4800.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4810.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5450.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5470.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5621.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5626.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/7515.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8001.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8021.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8030.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8031.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8034.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8040.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8090.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8116.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8158.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8161.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8163.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8178.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8179.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8180.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8186.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8193.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8200.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8206.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8210.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8251.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8300.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8340.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8341.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8370.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8380.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8400.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8420.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8470.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8490.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8492.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8496.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8499.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8501.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8502.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8620.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/9156.jpg'), ('code', 'Positive HA')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="distractors.csv" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="name" updates="None" val="action_loop" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="action"/>
+    <LoopTerminator name="action_loop"/>
+    <LoopInitiator loopType="TrialHandler" name="perception_loop">
+      <Param name="Selected rows" updates="None" val="$choice(268, size = 5, replace = False)" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('image', 'LowA(Neutral)/1450.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/1670.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/1812.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2070.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2102.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2104.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2153.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2190.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2200.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2205.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2215.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2221.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2235.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2270.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2273.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2312.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2320.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2377.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2383.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2396.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2397.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2411.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2440.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2489.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2491.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2493.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2495.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2499.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2506.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2512.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2513.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2516.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2518.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2530.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2560.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2570.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2580.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2593.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2620.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2695.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2720.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2745.1.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2840.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2850.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2870.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2890.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2900.2.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2980.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/4561.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/4622.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/5875.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7004.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7006.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7010.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7014.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7016.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7019.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7020.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7025.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7030.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7031.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7032.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7034.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7036.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7040.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7041.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7050.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7052.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7057.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7060.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7100.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7130.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7140.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7150.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7185.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7187.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7217.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7234.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7235.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7300.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7365.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7509.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7513.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7705.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7710.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7950.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9210.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9260.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9700.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'NegativeHA/2703.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/2811.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3000.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3001.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3005.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3010.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3015.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3016.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3030.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3051.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3053.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3059.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3060.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3062.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3063.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3064.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3068.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3069.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3071.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3080.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3100.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3101.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3102.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3103.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3110.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3120.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3130.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3131.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3140.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3150.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3168.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3170.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3180.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3191.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3195.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3225.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3261.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3266.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3350.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3400.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3500.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3530.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3550.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6021.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6022.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6212.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6243.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6313.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6315.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6350.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6360.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6415.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6520.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6540.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6560.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6563.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6570.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6821.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9040.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9075.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9163.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9183.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9185.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9187.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9252.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9253.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9254.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9322.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9325.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9326.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9405.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9410.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9412.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9413.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9414.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9420.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9428.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9433.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9570.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9571.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9635.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9800.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9810.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9902.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9908.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9910.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9911.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9921.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9940.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'PositiveHA/1650.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2208.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2209.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2216.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2300.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2347.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2389.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4007.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4220.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4225.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4290.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4311.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4490.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4597.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4599.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4607.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4608.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4611.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4626.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4643.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4645.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4650.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4651.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4652.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4653.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4656.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4658.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4659.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4660.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4664.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4666.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4668.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4670.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4672.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4676.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4677.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4680.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4681.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4683.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4687.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4689.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4690.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4693.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4694.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4695.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4697.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4698.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4800.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4810.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5450.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5470.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5621.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5626.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/7515.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8001.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8021.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8030.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8031.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8034.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8040.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8090.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8116.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8158.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8161.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8163.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8178.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8179.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8180.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8186.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8193.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8200.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8206.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8210.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8251.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8300.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8340.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8341.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8370.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8380.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8400.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8420.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8470.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8490.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8492.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8496.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8499.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8501.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8502.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8620.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/9156.jpg'), ('code', 'Positive HA')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="distractors.csv" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="name" updates="None" val="perception_loop" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="perception"/>
+    <LoopTerminator name="perception_loop"/>
+  </Flow>
+</PsychoPy2experiment>
