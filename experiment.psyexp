@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2023.2.2">
+<PsychoPy2experiment encoding="utf-8" version="2023.2.3">
   <Settings>
     <Param val="3" valType="str" updates="None" name="Audio latency priority"/>
     <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
@@ -53,6 +53,10 @@
     <Param val="MIDDLE_BUTTON" valType="list" updates="None" name="mgBlink"/>
     <Param val="CONTINUOUS" valType="str" updates="None" name="mgMove"/>
     <Param val="0.5" valType="num" updates="None" name="mgSaccade"/>
+    <Param val="neon.local" valType="str" updates="None" name="plCompanionAddress"/>
+    <Param val="scene_camera.json" valType="file" updates="None" name="plCompanionCameraCalibration"/>
+    <Param val="8080" valType="num" updates="None" name="plCompanionPort"/>
+    <Param val="True" valType="bool" updates="None" name="plCompanionRecordingEnabled"/>
     <Param val="0.6" valType="num" updates="None" name="plConfidenceThreshold"/>
     <Param val="True" valType="bool" updates="None" name="plPupilCaptureRecordingEnabled"/>
     <Param val="" valType="str" updates="None" name="plPupilCaptureRecordingLocation"/>
@@ -739,7 +743,7 @@
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
       </RoutineSettingsComponent>
-      <TextComponent name="welcome_experiment" plugin="None">
+      <TextComponent name="experiment_intro_text" plugin="None">
         <Param val="white" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
@@ -749,7 +753,7 @@
         <Param val="Arial" valType="str" updates="constant" name="font"/>
         <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
         <Param val="0.1" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="welcome_experiment" valType="code" updates="None" name="name"/>
+        <Param val="experiment_intro_text" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
@@ -801,10 +805,304 @@
         <Param val="text_align" valType="code" updates="None" name="name"/>
       </CodeComponent>
     </Routine>
+    <Routine name="baseline_introduction">
+      <RoutineSettingsComponent name="baseline_introduction" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="baseline_introduction" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <TextComponent name="baseline_text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.1" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="baseline_text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="In the experiment, you will be shown three circles and one sqaure. The sqaure is your target. your task is to click on the sqaure as fast as you can.&amp;#10;&amp;#10;press 'spacebar' to continue" valType="str" updates="constant" name="text"/>
+        <Param val="norm" valType="str" updates="None" name="units"/>
+        <Param val="1.8" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <KeyboardComponent name="baseline_intro_response" plugin="None">
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="baseline_intro_response" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="first key" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+      <CodeComponent name="text_align_2" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="# Code components should usually appear at the top&amp;#10;# of the routine. This one has to appear after the&amp;#10;# text component it refers to.&amp;#10;text_norm.alignText= 'left'" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="// Code component set to Both&amp;#10;text_norm.setAlignHoriz('left')" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Both" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="text_align_2" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="action_introduction">
+      <RoutineSettingsComponent name="action_introduction" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="action_introduction" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <TextComponent name="action_text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.1" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="action_text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="In this phase, you will be shown three circles, one square and an emotional / non emotional image in the center. Your tasks is to ignore the emotional / non emotional image and click on the sqaure as fast as you can.&amp;#10;&amp;#10;press 'spacebar' to continue" valType="str" updates="constant" name="text"/>
+        <Param val="norm" valType="str" updates="None" name="units"/>
+        <Param val="1.8" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <KeyboardComponent name="action_intro_respone" plugin="None">
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="action_intro_respone" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="first key" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+      <CodeComponent name="text_align_3" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="# Code components should usually appear at the top&amp;#10;# of the routine. This one has to appear after the&amp;#10;# text component it refers to.&amp;#10;text_norm.alignText= 'left'" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="// Code component set to Both&amp;#10;text_norm.setAlignHoriz('left')" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Both" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="text_align_3" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="perception_introduction">
+      <RoutineSettingsComponent name="perception_introduction" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="perception_introduction" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <TextComponent name="perception_text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.1" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="perception_text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="In this phase, you will be shown three circles, one square and an emotional / non emotional image in the center. Now the circle and the target (square)  will keep changing color between red, green and blue. Your task is to ignore the emotional / non emotional image and report the color of the target using the following keys :&amp;#10;&amp;#10;Red - 'r'&amp;#10;Green - 'g'&amp;#10;Blue - 'b'&amp;#10;&amp;#10;press 'spacebar' to continue" valType="str" updates="constant" name="text"/>
+        <Param val="norm" valType="str" updates="None" name="units"/>
+        <Param val="1.8" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <KeyboardComponent name="perception_intro_respone" plugin="None">
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="perception_intro_respone" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="first key" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+      <CodeComponent name="text_align_4" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="# Code components should usually appear at the top&amp;#10;# of the routine. This one has to appear after the&amp;#10;# text component it refers to.&amp;#10;text_norm.alignText= 'left'" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="// Code component set to Both&amp;#10;text_norm.setAlignHoriz('left')" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Both" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="text_align_4" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="thank_you">
+      <RoutineSettingsComponent name="thank_you" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="thank_you" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <TextComponent name="thank_you_text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.1" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="thank_you_text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="5.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="thank you for your participation. :))" valType="str" updates="constant" name="text"/>
+        <Param val="norm" valType="str" updates="None" name="units"/>
+        <Param val="1.8" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <CodeComponent name="text_align_5" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="# Code components should usually appear at the top&amp;#10;# of the routine. This one has to appear after the&amp;#10;# text component it refers to.&amp;#10;text_norm.alignText= 'left'" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="// Code component set to Both&amp;#10;text_norm.setAlignHoriz('left')" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Both" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="text_align_5" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
   </Routines>
   <Flow>
     <Routine name="load_variables"/>
     <Routine name="experiment_introduction"/>
+    <Routine name="baseline_introduction"/>
     <LoopInitiator loopType="TrialHandler" name="baseline_loop">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
@@ -818,6 +1116,7 @@
     </LoopInitiator>
     <Routine name="baseline"/>
     <LoopTerminator name="baseline_loop"/>
+    <Routine name="action_introduction"/>
     <LoopInitiator loopType="TrialHandler" name="action_loop">
       <Param name="Selected rows" updates="None" val="$choice(268, size = 1, replace = False)" valType="str"/>
       <Param name="conditions" updates="None" val="[OrderedDict([('image', 'LowA(Neutral)/1450.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/1670.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/1812.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2070.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2102.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2104.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2153.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2190.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2200.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2205.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2215.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2221.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2235.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2270.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2273.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2312.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2320.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2377.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2383.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2396.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2397.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2411.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2440.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2489.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2491.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2493.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2495.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2499.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2506.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2512.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2513.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2516.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2518.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2530.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2560.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2570.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2580.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2593.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2620.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2695.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2720.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2745.1.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2840.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2850.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2870.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2890.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2900.2.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2980.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/4561.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/4622.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/5875.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7004.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7006.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7010.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7014.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7016.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7019.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7020.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7025.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7030.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7031.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7032.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7034.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7036.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7040.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7041.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7050.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7052.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7057.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7060.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7100.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7130.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7140.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7150.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7185.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7187.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7217.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7234.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7235.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7300.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7365.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7509.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7513.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7705.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7710.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7950.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9210.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9260.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9700.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'NegativeHA/2703.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/2811.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3000.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3001.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3005.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3010.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3015.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3016.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3030.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3051.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3053.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3059.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3060.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3062.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3063.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3064.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3068.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3069.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3071.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3080.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3100.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3101.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3102.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3103.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3110.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3120.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3130.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3131.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3140.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3150.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3168.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3170.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3180.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3191.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3195.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3225.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3261.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3266.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3350.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3400.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3500.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3530.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3550.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6021.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6022.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6212.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6243.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6313.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6315.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6350.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6360.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6415.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6520.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6540.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6560.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6563.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6570.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6821.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9040.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9075.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9163.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9183.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9185.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9187.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9252.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9253.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9254.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9322.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9325.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9326.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9405.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9410.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9412.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9413.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9414.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9420.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9428.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9433.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9570.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9571.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9635.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9800.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9810.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9902.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9908.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9910.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9911.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9921.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9940.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'PositiveHA/1650.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2208.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2209.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2216.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2300.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2347.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2389.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4007.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4220.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4225.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4290.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4311.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4490.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4597.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4599.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4607.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4608.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4611.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4626.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4643.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4645.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4650.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4651.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4652.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4653.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4656.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4658.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4659.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4660.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4664.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4666.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4668.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4670.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4672.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4676.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4677.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4680.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4681.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4683.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4687.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4689.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4690.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4693.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4694.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4695.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4697.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4698.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4800.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4810.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5450.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5470.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5621.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5626.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/7515.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8001.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8021.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8030.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8031.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8034.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8040.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8090.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8116.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8158.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8161.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8163.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8178.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8179.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8180.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8186.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8193.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8200.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8206.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8210.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8251.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8300.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8340.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8341.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8370.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8380.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8400.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8420.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8470.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8490.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8492.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8496.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8499.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8501.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8502.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8620.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/9156.jpg'), ('code', 'Positive HA')])]" valType="str"/>
@@ -831,6 +1130,7 @@
     </LoopInitiator>
     <Routine name="action"/>
     <LoopTerminator name="action_loop"/>
+    <Routine name="perception_introduction"/>
     <LoopInitiator loopType="TrialHandler" name="perception_loop">
       <Param name="Selected rows" updates="None" val="$choice(268, size = 5, replace = False)" valType="str"/>
       <Param name="conditions" updates="None" val="[OrderedDict([('image', 'LowA(Neutral)/1450.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/1670.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/1812.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2070.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2102.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2104.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2153.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2190.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2200.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2205.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2215.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2221.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2235.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2270.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2273.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2312.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2320.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2377.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2383.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2396.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2397.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2411.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2440.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2489.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2491.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2493.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2495.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2499.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2506.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2512.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2513.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2516.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2518.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2530.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2560.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2570.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2580.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2593.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2620.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2695.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2720.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2745.1.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2840.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2850.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2870.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2890.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2900.2.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/2980.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/4561.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/4622.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/5875.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7004.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7006.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7010.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7014.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7016.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7019.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7020.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7025.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7030.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7031.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7032.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7034.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7036.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7040.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7041.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7050.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7052.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7057.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7060.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7100.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7130.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7140.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7150.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7185.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7187.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7217.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7234.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7235.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7300.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7365.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7509.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7513.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7705.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7710.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/7950.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9210.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9260.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'LowA(Neutral)/9700.jpg'), ('code', 'LowANeutral')]), OrderedDict([('image', 'NegativeHA/2703.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/2811.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3000.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3001.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3005.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3010.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3015.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3016.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3030.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3051.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3053.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3059.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3060.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3062.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3063.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3064.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3068.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3069.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3071.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3080.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3100.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3101.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3102.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3103.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3110.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3120.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3130.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3131.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3140.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3150.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3168.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3170.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3180.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3191.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3195.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3225.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3261.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3266.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3350.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3400.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3500.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3530.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/3550.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6021.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6022.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6212.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6243.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6313.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6315.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6350.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6360.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6415.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6520.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6540.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6560.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6563.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6570.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/6821.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9040.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9075.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9163.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9183.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9185.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9187.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9252.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9253.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9254.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9322.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9325.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9326.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9405.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9410.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9412.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9413.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9414.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9420.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9428.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9433.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9570.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9571.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9635.1.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9800.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9810.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9902.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9908.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9910.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9911.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9921.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'NegativeHA/9940.jpg'), ('code', 'negative HA')]), OrderedDict([('image', 'PositiveHA/1650.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2208.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2209.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2216.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2300.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2347.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/2389.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4007.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4220.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4225.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4290.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4311.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4490.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4597.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4599.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4607.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4608.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4611.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4626.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4643.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4645.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4650.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4651.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4652.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4653.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4656.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4658.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4659.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4660.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4664.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4666.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4668.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4670.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4672.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4676.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4677.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4680.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4681.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4683.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4687.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4689.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4690.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4693.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4694.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4695.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4697.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4698.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4800.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/4810.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5450.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5470.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5621.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/5626.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/7515.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8001.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8021.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8030.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8031.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8034.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8040.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8090.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8116.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8158.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8161.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8163.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8178.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8179.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8180.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8186.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8193.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8200.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8206.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8210.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8251.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8300.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8340.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8341.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8370.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8380.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8400.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8420.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8470.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8490.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8492.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8496.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8499.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8501.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8502.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/8620.jpg'), ('code', 'Positive HA')]), OrderedDict([('image', 'PositiveHA/9156.jpg'), ('code', 'Positive HA')])]" valType="str"/>
@@ -844,5 +1144,6 @@
     </LoopInitiator>
     <Routine name="perception"/>
     <LoopTerminator name="perception_loop"/>
+    <Routine name="thank_you"/>
   </Flow>
 </PsychoPy2experiment>
