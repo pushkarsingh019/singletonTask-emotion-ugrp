@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2023.2.2),
-    on Tue Mar 19 12:21:17 2024
+    on Tue Mar 19 12:23:58 2024
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -346,7 +346,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     baseline_text = visual.TextStim(win=win, name='baseline_text',
         text="In the experiment, you will be shown three circles and one sqaure. The sqaure is your target. your task is to click on the sqaure as fast as you can.\n\npress 'spacebar' to continue",
         font='Arial',
-        pos=(0, 0), height=0.1, wrapWidth=None, ori=0.0, 
+        pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=0.0);
@@ -391,7 +391,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     action_text = visual.TextStim(win=win, name='action_text',
         text="In this phase, you will be shown three circles, one square and an emotional / non emotional image in the center. Your tasks is to ignore the emotional / non emotional image and click on the sqaure as fast as you can.\n\npress 'spacebar' to continue",
         font='Arial',
-        pos=(0, 0), height=0.1, wrapWidth=None, ori=0.0, 
+        pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=0.0);
@@ -444,7 +444,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     perception_text = visual.TextStim(win=win, name='perception_text',
         text="In this phase, you will be shown three circles, one square and an emotional / non emotional image in the center. Now the circle and the target (square)  will keep changing color between red, green and blue. Your task is to ignore the emotional / non emotional image and report the color of the target using the following keys :\n\nRed - 'r'\nGreen - 'g'\nBlue - 'b'\n\npress 'spacebar' to continue",
         font='Arial',
-        pos=(0, 0), height=0.1, wrapWidth=None, ori=0.0, 
+        pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=0.0);
@@ -495,7 +495,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     thank_you_text = visual.TextStim(win=win, name='thank_you_text',
         text='thank you for your participation. :))',
         font='Arial',
-        pos=(0, 0), height=0.1, wrapWidth=None, ori=0.0, 
+        pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=0.0);
