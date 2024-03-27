@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2023.2.2),
-    on Wed Mar 27 19:58:25 2024
+    on Wed Mar 27 18:10:23 2024
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -37,10 +37,7 @@ from psychopy.hardware import keyboard
 # variables that are constant for the experiment
 import random
 from numpy.random import choice
-import pandas as pd
 
-distractors = pd.read_csv('distractors.csv')
-images = distractors['image']
 fixation_size = (15, 15)
 circle_size = (70,70)
 rectangle_size = (70,70)
@@ -50,7 +47,6 @@ image_size = (200, 200)
 possible_positions = [(0,250), (0,-250), (250, 0), (-250, 0)]
 conditions = ['present_emotional', 'present_neutral', 'absent_emotional', 'absent_neutral']
 weights = [1, 1, 1, 1]
-
 # --- Setup global variables (available in all functions) ---
 # Ensure that relative paths start from the same directory as this script
 _thisDir = os.path.dirname(os.path.abspath(__file__))
@@ -125,7 +121,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath="/Users/pushkarsingh/Documents/01 University/03 Self Prioritisation Research/11 Ananya's Experiment/experiment/experiment_lastrun.py",
+        originPath="/Users/pushkarsingh/Documents/01 University/03 Self Prioritisation Research/11 Ananya's Experiment/experiment/experiment.py",
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -340,14 +336,10 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     current_condition = ""
     screen_components = []
     circle = ""
-    target = ""
-    distractor = ""
+    action_target = ""
+    action_distractor = ""
     neutral_red_square = ""
-    perception_text = "You will be shown 3 circles and a square on the screen. The square is your Target. When you see the square on the screen, push the right arrow key. When the square is not there no the screen press the left arrow key"
-    action_text = "You will be shown 3 circles and a square on the screen. The square is your Target. You have ignore other things on the screen and click on the square. In case the square is missing click on the centre of the screen."
-    target_present = False
-    image = ""
-    code = ""
+    
     
     # --- Initialize components for Routine "experiment_introduction" ---
     experiment_intro_text = visual.TextStim(win=win, name='experiment_intro_text',
@@ -361,7 +353,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "action_introduction" ---
     action_text = visual.TextStim(win=win, name='action_text',
-        text=action_text + "\n" + "press 'spacebar' to continue",
+        text="In this phase, you will be shown three circles, one square and an emotional / non emotional image in the center. Your tasks is to ignore the emotional / non emotional image and click on the sqaure as fast as you can.\n\npress 'spacebar' to continue",
         font='Arial',
         pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -378,13 +370,29 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         opacity=None, depth=0.0, interpolate=True)
     
     # --- Initialize components for Routine "action" ---
+    # Run 'Begin Experiment' code from action_code
+    action_circle3 = visual.ShapeStim(
+            win=win, name='action_circle3',units='pix', 
+            size=circle_size, vertices='circle',
+            ori=0.0, pos=[0,0], anchor='center',
+            lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
+            opacity=None, depth=-3.0, interpolate=True)
     action_response = event.Mouse(win=win)
     x, y = [None, None]
     action_response.mouseClock = core.Clock()
+    action_distractor = visual.ImageStim(
+        win=win,
+        name='action_distractor', units='pix', 
+        image='default.png', mask=None, anchor='center',
+        ori=0.0, pos=(0, 0), size=image_size,
+        color=[1,1,1], colorSpace='rgb', opacity=None,
+        flipHoriz=False, flipVert=False,
+        texRes=128.0, interpolate=True, depth=-2.0)
+    key_resp = keyboard.Keyboard()
     
     # --- Initialize components for Routine "perception_introduction" ---
     perception_text = visual.TextStim(win=win, name='perception_text',
-        text=perception_text + "\n" + "press 'spacebar' to continue",
+        text="In this phase, you will be shown three circles, one square and an emotional / non emotional image in the center. Now the circle and the target (square)  will keep changing color between red, green and blue. Your task is to ignore the emotional / non emotional image and report the color of the target using the following keys :\n\nRed - 'r'\nGreen - 'g'\nBlue - 'b'\n\npress 'spacebar' to continue",
         font='Arial',
         pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -392,15 +400,45 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         depth=0.0);
     perception_intro_respone = keyboard.Keyboard()
     
-    # --- Initialize components for Routine "perception_fixation_routine" ---
+    # --- Initialize components for Routine "perception" ---
     perception_fixation = visual.ShapeStim(
         win=win, name='perception_fixation', vertices='cross',units='pix', 
         size=fixation_size,
         ori=0.0, pos=(0, 0), anchor='center',
         lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
-        opacity=None, depth=0.0, interpolate=True)
-    
-    # --- Initialize components for Routine "perception" ---
+        opacity=None, depth=-1.0, interpolate=True)
+    perception_circle1 = visual.ShapeStim(
+        win=win, name='perception_circle1',units='pix', 
+        size=circle_size, vertices='circle',
+        ori=0.0, pos=[0,0], anchor='center',
+        lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
+        opacity=None, depth=-2.0, interpolate=True)
+    perception_circle2 = visual.ShapeStim(
+        win=win, name='perception_circle2',units='pix', 
+        size=circle_size, vertices='circle',
+        ori=0.0, pos=[0,0], anchor='center',
+        lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
+        opacity=None, depth=-3.0, interpolate=True)
+    perception_circle3 = visual.ShapeStim(
+        win=win, name='perception_circle3',units='pix', 
+        size=circle_size, vertices='circle',
+        ori=0.0, pos=[0,0], anchor='center',
+        lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
+        opacity=None, depth=-4.0, interpolate=True)
+    perception_target = visual.Rect(
+        win=win, name='perception_target',units='pix', 
+        width=rectangle_size[0], height=rectangle_size[1],
+        ori=0.0, pos=[0,0], anchor='center',
+        lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
+        opacity=None, depth=-5.0, interpolate=True)
+    perception_distractor = visual.ImageStim(
+        win=win,
+        name='perception_distractor', units='pix', 
+        image='default.png', mask=None, anchor='center',
+        ori=0.0, pos=(0, 0), size=image_size,
+        color=[1,1,1], colorSpace='rgb', opacity=None,
+        flipHoriz=False, flipVert=False,
+        texRes=128.0, interpolate=True, depth=-6.0)
     perception_response = keyboard.Keyboard()
     
     # --- Initialize components for Routine "thank_you" ---
@@ -709,9 +747,9 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     routineTimer.reset()
     
     # set up handler to look after randomisation of conditions etc
-    action_loop = data.TrialHandler(nReps=3.0, method='random', 
+    action_loop = data.TrialHandler(nReps=1.0, method='random', 
         extraInfo=expInfo, originPath=-1,
-        trialList=[None],
+        trialList=data.importConditions('distractors.csv', selection=choice(268, size = 10, replace = False)),
         seed=None, name='action_loop')
     thisExp.addLoop(action_loop)  # add the loop to the experiment
     thisAction_loop = action_loop.trialList[0]  # so we can initialise stimuli with some values
@@ -834,9 +872,6 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         random.shuffle(possible_positions)
         pos_action_circle1, pos_action_circle2, pos_action_circle3, pos_action_target = possible_positions
         
-        image = choice(images)
-        code = image.split("/")[0]
-        
         random.shuffle(conditions)
         current_condition = random.choices(conditions, weights=weights)[0]
         
@@ -847,47 +882,47 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
             thisExp.addData("Valence", code)
             for i in range(3):
                 circle = visual.ShapeStim(
-                win=win, name=f'circle_{i}',units='pix', 
+                win=win, name=f'action_circle_{i}',units='pix', 
                 size=circle_size, vertices='circle',
                 ori=0.0, pos=possible_positions[i], anchor='center',
                 lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
                 opacity=None, depth=-3.0, interpolate=True)
                 screen_components.append(circle)
-            distractor = visual.ImageStim(
+            action_distractor = visual.ImageStim(
                 win=win,
-                name='distractor', units='pix', 
-                image=image, mask=None, anchor='center',
+                name='action_distractor', units='pix', 
+                image='default.png', mask=None, anchor='center',
                 ori=0.0, pos=(0, 0), size=image_size,
                 color=[1,1,1], colorSpace='rgb', opacity=None,
                 flipHoriz=False, flipVert=False,
                 texRes=128.0, interpolate=True, depth=-6.0)
-            screen_components.append(distractor)
-            target = visual.Rect(
-                win=win, name='target',units='pix', 
+            screen_components.append(action_distractor)
+            action_target = visual.Rect(
+                win=win, name='action_target',units='pix', 
                 width=rectangle_size[0], height=rectangle_size[1],
                 ori=0.0, pos=possible_positions[3], anchor='center',
                 lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
                 opacity=None, depth=-4.0, interpolate=True)
-            screen_components.append(target)   
+            screen_components.append(action_target)   
         elif current_condition == "present_neutral":
             thisExp.addData("Target", "present")
             thisExp.addData("Phase", "action")
             thisExp.addData("Valence", "neutral")
             for i in range(3):
                 circle = visual.ShapeStim(
-                win=win, name=f'circle_{i}',units='pix', 
+                win=win, name=f'action_circle_{i}',units='pix', 
                 size=circle_size, vertices='circle',
                 ori=0.0, pos=possible_positions[i], anchor='center',
                 lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
                 opacity=None, depth=-3.0, interpolate=True)
                 screen_components.append(circle)
-            target = visual.Rect(
-                win=win, name='target',units='pix', 
+            action_target = visual.Rect(
+                win=win, name='action_target',units='pix', 
                 width=rectangle_size[0], height=rectangle_size[1],
                 ori=0.0, pos=possible_positions[3], anchor='center',
                 lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
                 opacity=None, depth=-4.0, interpolate=True)
-            screen_components.append(target)
+            screen_components.append(action_target)
             neutral_red_square = visual.Rect(
                 win=win, name='red_square', units='pix',
                 width=image_size[0], height=image_size[1],
@@ -901,40 +936,40 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
             thisExp.addData("Valence", code)
             for i in range(4):
                 circle = visual.ShapeStim(
-                win=win, name=f'circle_{i}',units='pix', 
+                win=win, name=f'action_circle_{i}',units='pix', 
                 size=circle_size, vertices='circle',
                 ori=0.0, pos=possible_positions[i], anchor='center',
                 lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
                 opacity=None, depth=-3.0, interpolate=True)
                 screen_components.append(circle)
-            target = visual.ImageStim(
+            action_distractor = visual.ImageStim(
                 win=win,
-                name='target', units='pix', 
-                image=image, mask=None, anchor='center',
+                name='action_distractor', units='pix', 
+                image='default.png', mask=None, anchor='center',
                 ori=0.0, pos=(0, 0), size=image_size,
                 color=[1,1,1], colorSpace='rgb', opacity=None,
                 flipHoriz=False, flipVert=False,
                 texRes=128.0, interpolate=True, depth=-6.0)
-            screen_components.append(target)
+            screen_components.append(action_distractor)
         elif current_condition == 'absent_neutral':
             thisExp.addData("Target", "absent")
             thisExp.addData("Phase", "action")
             thisExp.addData("Valence", "neutral")
             for i in range(4):
                 circle = visual.ShapeStim(
-                win=win, name=f'circle_{i}',units='pix', 
+                win=win, name=f'action_circle_{i}',units='pix', 
                 size=circle_size, vertices='circle',
                 ori=0.0, pos=possible_positions[i], anchor='center',
                 lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
                 opacity=None, depth=-3.0, interpolate=True)
                 screen_components.append(circle)
-            target = visual.Rect(
-                win=win, name='target', units='pix',
+            neutral_red_square = visual.Rect(
+                win=win, name='red_square', units='pix',
                 width=image_size[0], height=image_size[1],
                 ori=0.0, pos=(0, 0), anchor='center',
                 lineWidth=1.0,     colorSpace='rgb',  lineColor='red', fillColor='red',
                 opacity=None, depth=-8.0, interpolate=True)
-            screen_components.append(target)
+            screen_components.append(neutral_red_square)
         else:
             print("something went wrong, option is not available")
             
@@ -949,8 +984,12 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         action_response.time = []
         action_response.clicked_name = []
         gotValidClick = False  # until a click is received
+        action_distractor.setImage(image)
+        key_resp.keys = []
+        key_resp.rt = []
+        _key_resp_allKeys = []
         # keep track of which components have finished
-        actionComponents = [action_response]
+        actionComponents = [action_response, action_distractor, key_resp]
         for thisComponent in actionComponents:
             thisComponent.tStart = None
             thisComponent.tStop = None
@@ -965,7 +1004,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         
         # --- Run Routine "action" ---
         routineForceEnded = not continueRoutine
-        while continueRoutine and routineTimer.getTime() < 8.0:
+        while continueRoutine:
             # get current time
             t = routineTimer.getTime()
             tThisFlip = win.getFutureFlipTime(clock=routineTimer)
@@ -1006,7 +1045,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
                     if sum(buttons) > 0:  # state changed to a new click
                         # check if the mouse was inside our 'clickable' objects
                         gotValidClick = False
-                        clickableList = environmenttools.getFromNames(target, namespace=locals())
+                        clickableList = environmenttools.getFromNames([action_target, neutral_red_square], namespace=locals())
                         for obj in clickableList:
                             # is this object clicked on?
                             if obj.contains(action_response):
@@ -1022,6 +1061,67 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
                         action_response.time.append(action_response.mouseClock.getTime())
                         if gotValidClick:
                             continueRoutine = False  # end routine on response
+            
+            # *action_distractor* updates
+            
+            # if action_distractor is starting this frame...
+            if action_distractor.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                action_distractor.frameNStart = frameN  # exact frame index
+                action_distractor.tStart = t  # local t and not account for scr refresh
+                action_distractor.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(action_distractor, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'action_distractor.started')
+                # update status
+                action_distractor.status = STARTED
+                action_distractor.setAutoDraw(True)
+            
+            # if action_distractor is active this frame...
+            if action_distractor.status == STARTED:
+                # update params
+                pass
+            
+            # if action_distractor is stopping this frame...
+            if action_distractor.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > action_distractor.tStartRefresh + 8.0-frameTolerance:
+                    # keep track of stop time/frame for later
+                    action_distractor.tStop = t  # not accounting for scr refresh
+                    action_distractor.frameNStop = frameN  # exact frame index
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'action_distractor.stopped')
+                    # update status
+                    action_distractor.status = FINISHED
+                    action_distractor.setAutoDraw(False)
+            
+            # *key_resp* updates
+            waitOnFlip = False
+            
+            # if key_resp is starting this frame...
+            if key_resp.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                key_resp.frameNStart = frameN  # exact frame index
+                key_resp.tStart = t  # local t and not account for scr refresh
+                key_resp.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(key_resp, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'key_resp.started')
+                # update status
+                key_resp.status = STARTED
+                # keyboard checking is just starting
+                waitOnFlip = True
+                win.callOnFlip(key_resp.clock.reset)  # t=0 on next screen flip
+                win.callOnFlip(key_resp.clearEvents, eventType='keyboard')  # clear events on next screen flip
+            if key_resp.status == STARTED and not waitOnFlip:
+                theseKeys = key_resp.getKeys(keyList=['y','n','left','right','space'], ignoreKeys=["escape"], waitRelease=False)
+                _key_resp_allKeys.extend(theseKeys)
+                if len(_key_resp_allKeys):
+                    key_resp.keys = _key_resp_allKeys[-1].name  # just the last key pressed
+                    key_resp.rt = _key_resp_allKeys[-1].rt
+                    key_resp.duration = _key_resp_allKeys[-1].duration
+                    # a response ends the routine
+                    continueRoutine = False
             
             # check for quit (typically the Esc key)
             if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -1062,17 +1162,21 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         action_loop.addData('action_response.rightButton', action_response.rightButton)
         action_loop.addData('action_response.time', action_response.time)
         action_loop.addData('action_response.clicked_name', action_response.clicked_name)
-        # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
-        if routineForceEnded:
-            routineTimer.reset()
-        else:
-            routineTimer.addTime(-8.000000)
+        # check responses
+        if key_resp.keys in ['', [], None]:  # No response was made
+            key_resp.keys = None
+        action_loop.addData('key_resp.keys',key_resp.keys)
+        if key_resp.keys != None:  # we had a response
+            action_loop.addData('key_resp.rt', key_resp.rt)
+            action_loop.addData('key_resp.duration', key_resp.duration)
+        # the Routine "action" was not non-slip safe, so reset the non-slip timer
+        routineTimer.reset()
         thisExp.nextEntry()
         
         if thisSession is not None:
             # if running in a Session with a Liaison client, send data up to now
             thisSession.sendExperimentData()
-    # completed 3.0 repeats of 'action_loop'
+    # completed 1.0 repeats of 'action_loop'
     
     
     # --- Prepare to start Routine "perception_introduction" ---
@@ -1190,9 +1294,9 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     routineTimer.reset()
     
     # set up handler to look after randomisation of conditions etc
-    perception_loop = data.TrialHandler(nReps=3.0, method='random', 
+    perception_loop = data.TrialHandler(nReps=1.0, method='random', 
         extraInfo=expInfo, originPath=-1,
-        trialList=[None],
+        trialList=data.importConditions('distractors.csv', selection=choice(268, size = 5, replace = False)),
         seed=None, name='perception_loop')
     thisExp.addLoop(perception_loop)  # add the loop to the experiment
     thisPerception_loop = perception_loop.trialList[0]  # so we can initialise stimuli with some values
@@ -1218,13 +1322,43 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
             for paramName in thisPerception_loop:
                 globals()[paramName] = thisPerception_loop[paramName]
         
-        # --- Prepare to start Routine "perception_fixation_routine" ---
+        # --- Prepare to start Routine "perception" ---
         continueRoutine = True
         # update component parameters for each repeat
-        thisExp.addData('perception_fixation_routine.started', globalClock.getTime())
+        thisExp.addData('perception.started', globalClock.getTime())
+        # Run 'Begin Routine' code from perception_code
+        random.shuffle(possible_positions)
+        pos_perception_circle1, pos_perception_circle2, pos_perception_circle3, pos_perception_target = possible_positions
+        target_color = choice(colors)
+        distractor_color = choice(colors)
+        thisExp.addData("target color", target_color)
+        thisExp.addData("distractor color", distractor_color)
+        
+        if(target_color == "red"):
+            correct_response = 'r'
+        elif (target_color == "green"):
+            correct_response = "g"
+        elif (target_color == "blue"):
+            correct_response = "b"
+        else:
+            print("how the fuck is target color anything other than red, green or blue")
+        
+        
+        perception_circle1.setPos(pos_perception_circle1)
+        perception_circle2.setFillColor(distractor_color)
+        perception_circle2.setPos(pos_perception_circle2)
+        perception_circle2.setLineColor(distractor_color)
+        perception_circle3.setPos(pos_perception_circle3)
+        perception_target.setFillColor(target_color)
+        perception_target.setPos(pos_perception_target)
+        perception_target.setLineColor(target_color)
+        perception_distractor.setImage(image)
+        perception_response.keys = []
+        perception_response.rt = []
+        _perception_response_allKeys = []
         # keep track of which components have finished
-        perception_fixation_routineComponents = [perception_fixation]
-        for thisComponent in perception_fixation_routineComponents:
+        perceptionComponents = [perception_fixation, perception_circle1, perception_circle2, perception_circle3, perception_target, perception_distractor, perception_response]
+        for thisComponent in perceptionComponents:
             thisComponent.tStart = None
             thisComponent.tStop = None
             thisComponent.tStartRefresh = None
@@ -1236,9 +1370,9 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         _timeToFirstFrame = win.getFutureFlipTime(clock="now")
         frameN = -1
         
-        # --- Run Routine "perception_fixation_routine" ---
+        # --- Run Routine "perception" ---
         routineForceEnded = not continueRoutine
-        while continueRoutine and routineTimer.getTime() < 2.0:
+        while continueRoutine and routineTimer.getTime() < 10.0:
             # get current time
             t = routineTimer.getTime()
             tThisFlip = win.getFutureFlipTime(clock=routineTimer)
@@ -1275,188 +1409,168 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
                     perception_fixation.status = FINISHED
                     perception_fixation.setAutoDraw(False)
             
-            # check for quit (typically the Esc key)
-            if defaultKeyboard.getKeys(keyList=["escape"]):
-                thisExp.status = FINISHED
-            if thisExp.status == FINISHED or endExpNow:
-                endExperiment(thisExp, inputs=inputs, win=win)
-                return
+            # *perception_circle1* updates
             
-            # check if all components have finished
-            if not continueRoutine:  # a component has requested a forced-end of Routine
-                routineForceEnded = True
-                break
-            continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in perception_fixation_routineComponents:
-                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                    continueRoutine = True
-                    break  # at least one component has not yet finished
+            # if perception_circle1 is starting this frame...
+            if perception_circle1.status == NOT_STARTED and tThisFlip >= 2.0-frameTolerance:
+                # keep track of start time/frame for later
+                perception_circle1.frameNStart = frameN  # exact frame index
+                perception_circle1.tStart = t  # local t and not account for scr refresh
+                perception_circle1.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(perception_circle1, 'tStartRefresh')  # time at next scr refresh
+                # update status
+                perception_circle1.status = STARTED
+                perception_circle1.setAutoDraw(True)
             
-            # refresh the screen
-            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                win.flip()
-        
-        # --- Ending Routine "perception_fixation_routine" ---
-        for thisComponent in perception_fixation_routineComponents:
-            if hasattr(thisComponent, "setAutoDraw"):
-                thisComponent.setAutoDraw(False)
-        thisExp.addData('perception_fixation_routine.stopped', globalClock.getTime())
-        # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
-        if routineForceEnded:
-            routineTimer.reset()
-        else:
-            routineTimer.addTime(-2.000000)
-        
-        # --- Prepare to start Routine "perception" ---
-        continueRoutine = True
-        # update component parameters for each repeat
-        thisExp.addData('perception.started', globalClock.getTime())
-        # Run 'Begin Routine' code from perception_code
-        random.shuffle(possible_positions)
-        pos_action_circle1, pos_action_circle2, pos_action_circle3, pos_action_target = possible_positions
-        
-        random.shuffle(conditions)
-        current_condition = random.choices(conditions, weights=weights)[0]
-        
-        image = choice(images)
-        code = image.split("/")[0]
-        
-        # componenets that make the
-        if current_condition == "present_emotional":
-            target_present = True
-            thisExp.addData("Target", "present")
-            thisExp.addData("Phase", "perception")
-            thisExp.addData("Valence", code)
-            for i in range(3):
-                circle = visual.ShapeStim(
-                win=win, name=f'circle_{i}',units='pix', 
-                size=circle_size, vertices='circle',
-                ori=0.0, pos=possible_positions[i], anchor='center',
-                lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
-                opacity=None, depth=-3.0, interpolate=True)
-                screen_components.append(circle)
-            distractor = visual.ImageStim(
-                win=win,
-                name='distractor', units='pix', 
-                image=image, mask=None, anchor='center',
-                ori=0.0, pos=(0, 0), size=image_size,
-                color=[1,1,1], colorSpace='rgb', opacity=None,
-                flipHoriz=False, flipVert=False,
-                texRes=128.0, interpolate=True, depth=-6.0)
-            screen_components.append(distractor)
-            target = visual.Rect(
-                win=win, name='target',units='pix', 
-                width=rectangle_size[0], height=rectangle_size[1],
-                ori=0.0, pos=possible_positions[3], anchor='center',
-                lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
-                opacity=None, depth=-4.0, interpolate=True)
-            screen_components.append(target)   
-        elif current_condition == "present_neutral":
-            target_present = True
-            thisExp.addData("Target", "present")
-            thisExp.addData("Phase", "perception")
-            thisExp.addData("Valence", "neutral")
-            for i in range(3):
-                circle = visual.ShapeStim(
-                win=win, name=f'circle_{i}',units='pix', 
-                size=circle_size, vertices='circle',
-                ori=0.0, pos=possible_positions[i], anchor='center',
-                lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
-                opacity=None, depth=-3.0, interpolate=True)
-                screen_components.append(circle)
-            target = visual.Rect(
-                win=win, name='target',units='pix', 
-                width=rectangle_size[0], height=rectangle_size[1],
-                ori=0.0, pos=possible_positions[3], anchor='center',
-                lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
-                opacity=None, depth=-4.0, interpolate=True)
-            screen_components.append(target)
-            neutral_red_square = visual.Rect(
-                win=win, name='red_square', units='pix',
-                width=image_size[0], height=image_size[1],
-                ori=0.0, pos=(0, 0), anchor='center',
-                lineWidth=1.0,     colorSpace='rgb',  lineColor='red', fillColor='red',
-                opacity=None, depth=-8.0, interpolate=True)
-            screen_components.append(neutral_red_square)
-        elif current_condition == "absent_emotional":
-            target_present = False
-            thisExp.addData("Target", "Absent")
-            thisExp.addData("Phase", "perception")
-            thisExp.addData("Valence", code)
-            for i in range(4):
-                circle = visual.ShapeStim(
-                win=win, name=f'circle_{i}',units='pix', 
-                size=circle_size, vertices='circle',
-                ori=0.0, pos=possible_positions[i], anchor='center',
-                lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
-                opacity=None, depth=-3.0, interpolate=True)
-                screen_components.append(circle)
-            target = visual.ImageStim(
-                win=win,
-                name='target', units='pix', 
-                image=image, mask=None, anchor='center',
-                ori=0.0, pos=(0, 0), size=image_size,
-                color=[1,1,1], colorSpace='rgb', opacity=None,
-                flipHoriz=False, flipVert=False,
-                texRes=128.0, interpolate=True, depth=-6.0)
-            screen_components.append(target)
-        elif current_condition == 'absent_neutral':
-            target_present = False
-            thisExp.addData("Target", "absent")
-            thisExp.addData("Phase", "perception")
-            thisExp.addData("Valence", "neutral")
-            for i in range(4):
-                circle = visual.ShapeStim(
-                win=win, name=f'circle_{i}',units='pix', 
-                size=circle_size, vertices='circle',
-                ori=0.0, pos=possible_positions[i], anchor='center',
-                lineWidth=1.0,     colorSpace='rgb',  lineColor='white', fillColor='white',
-                opacity=None, depth=-3.0, interpolate=True)
-                screen_components.append(circle)
-            target = visual.Rect(
-                win=win, name='target', units='pix',
-                width=image_size[0], height=image_size[1],
-                ori=0.0, pos=(0, 0), anchor='center',
-                lineWidth=1.0,     colorSpace='rgb',  lineColor='red', fillColor='red',
-                opacity=None, depth=-8.0, interpolate=True)
-            screen_components.append(target)
-        else:
-            print("something went wrong, option is not available")
+            # if perception_circle1 is active this frame...
+            if perception_circle1.status == STARTED:
+                # update params
+                pass
             
-        for component in screen_components:
-            component.setAutoDraw(True)
-        perception_response.keys = []
-        perception_response.rt = []
-        _perception_response_allKeys = []
-        # keep track of which components have finished
-        perceptionComponents = [perception_response]
-        for thisComponent in perceptionComponents:
-            thisComponent.tStart = None
-            thisComponent.tStop = None
-            thisComponent.tStartRefresh = None
-            thisComponent.tStopRefresh = None
-            if hasattr(thisComponent, 'status'):
-                thisComponent.status = NOT_STARTED
-        # reset timers
-        t = 0
-        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-        frameN = -1
-        
-        # --- Run Routine "perception" ---
-        routineForceEnded = not continueRoutine
-        while continueRoutine and routineTimer.getTime() < 8.0:
-            # get current time
-            t = routineTimer.getTime()
-            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
-            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-            # update/draw components on each frame
+            # if perception_circle1 is stopping this frame...
+            if perception_circle1.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > perception_circle1.tStartRefresh + 8.0-frameTolerance:
+                    # keep track of stop time/frame for later
+                    perception_circle1.tStop = t  # not accounting for scr refresh
+                    perception_circle1.frameNStop = frameN  # exact frame index
+                    # update status
+                    perception_circle1.status = FINISHED
+                    perception_circle1.setAutoDraw(False)
+            
+            # *perception_circle2* updates
+            
+            # if perception_circle2 is starting this frame...
+            if perception_circle2.status == NOT_STARTED and tThisFlip >= 2.0-frameTolerance:
+                # keep track of start time/frame for later
+                perception_circle2.frameNStart = frameN  # exact frame index
+                perception_circle2.tStart = t  # local t and not account for scr refresh
+                perception_circle2.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(perception_circle2, 'tStartRefresh')  # time at next scr refresh
+                # update status
+                perception_circle2.status = STARTED
+                perception_circle2.setAutoDraw(True)
+            
+            # if perception_circle2 is active this frame...
+            if perception_circle2.status == STARTED:
+                # update params
+                pass
+            
+            # if perception_circle2 is stopping this frame...
+            if perception_circle2.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > perception_circle2.tStartRefresh + 8.0-frameTolerance:
+                    # keep track of stop time/frame for later
+                    perception_circle2.tStop = t  # not accounting for scr refresh
+                    perception_circle2.frameNStop = frameN  # exact frame index
+                    # update status
+                    perception_circle2.status = FINISHED
+                    perception_circle2.setAutoDraw(False)
+            
+            # *perception_circle3* updates
+            
+            # if perception_circle3 is starting this frame...
+            if perception_circle3.status == NOT_STARTED and tThisFlip >= 2.0-frameTolerance:
+                # keep track of start time/frame for later
+                perception_circle3.frameNStart = frameN  # exact frame index
+                perception_circle3.tStart = t  # local t and not account for scr refresh
+                perception_circle3.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(perception_circle3, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'perception_circle3.started')
+                # update status
+                perception_circle3.status = STARTED
+                perception_circle3.setAutoDraw(True)
+            
+            # if perception_circle3 is active this frame...
+            if perception_circle3.status == STARTED:
+                # update params
+                pass
+            
+            # if perception_circle3 is stopping this frame...
+            if perception_circle3.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > perception_circle3.tStartRefresh + 8.0-frameTolerance:
+                    # keep track of stop time/frame for later
+                    perception_circle3.tStop = t  # not accounting for scr refresh
+                    perception_circle3.frameNStop = frameN  # exact frame index
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'perception_circle3.stopped')
+                    # update status
+                    perception_circle3.status = FINISHED
+                    perception_circle3.setAutoDraw(False)
+            
+            # *perception_target* updates
+            
+            # if perception_target is starting this frame...
+            if perception_target.status == NOT_STARTED and tThisFlip >= 2.0-frameTolerance:
+                # keep track of start time/frame for later
+                perception_target.frameNStart = frameN  # exact frame index
+                perception_target.tStart = t  # local t and not account for scr refresh
+                perception_target.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(perception_target, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'perception_target.started')
+                # update status
+                perception_target.status = STARTED
+                perception_target.setAutoDraw(True)
+            
+            # if perception_target is active this frame...
+            if perception_target.status == STARTED:
+                # update params
+                pass
+            
+            # if perception_target is stopping this frame...
+            if perception_target.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > perception_target.tStartRefresh + 8.0-frameTolerance:
+                    # keep track of stop time/frame for later
+                    perception_target.tStop = t  # not accounting for scr refresh
+                    perception_target.frameNStop = frameN  # exact frame index
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'perception_target.stopped')
+                    # update status
+                    perception_target.status = FINISHED
+                    perception_target.setAutoDraw(False)
+            
+            # *perception_distractor* updates
+            
+            # if perception_distractor is starting this frame...
+            if perception_distractor.status == NOT_STARTED and tThisFlip >= 2.0-frameTolerance:
+                # keep track of start time/frame for later
+                perception_distractor.frameNStart = frameN  # exact frame index
+                perception_distractor.tStart = t  # local t and not account for scr refresh
+                perception_distractor.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(perception_distractor, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'perception_distractor.started')
+                # update status
+                perception_distractor.status = STARTED
+                perception_distractor.setAutoDraw(True)
+            
+            # if perception_distractor is active this frame...
+            if perception_distractor.status == STARTED:
+                # update params
+                pass
+            
+            # if perception_distractor is stopping this frame...
+            if perception_distractor.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > perception_distractor.tStartRefresh + 8.0-frameTolerance:
+                    # keep track of stop time/frame for later
+                    perception_distractor.tStop = t  # not accounting for scr refresh
+                    perception_distractor.frameNStop = frameN  # exact frame index
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'perception_distractor.stopped')
+                    # update status
+                    perception_distractor.status = FINISHED
+                    perception_distractor.setAutoDraw(False)
             
             # *perception_response* updates
             waitOnFlip = False
             
             # if perception_response is starting this frame...
-            if perception_response.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            if perception_response.status == NOT_STARTED and tThisFlip >= 2.0-frameTolerance:
                 # keep track of start time/frame for later
                 perception_response.frameNStart = frameN  # exact frame index
                 perception_response.tStart = t  # local t and not account for scr refresh
@@ -1484,12 +1598,17 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
                     perception_response.status = FINISHED
                     perception_response.status = FINISHED
             if perception_response.status == STARTED and not waitOnFlip:
-                theseKeys = perception_response.getKeys(keyList=['left','right'], ignoreKeys=["escape"], waitRelease=False)
+                theseKeys = perception_response.getKeys(keyList=['r', 'g', 'b'], ignoreKeys=["escape"], waitRelease=False)
                 _perception_response_allKeys.extend(theseKeys)
                 if len(_perception_response_allKeys):
                     perception_response.keys = _perception_response_allKeys[-1].name  # just the last key pressed
                     perception_response.rt = _perception_response_allKeys[-1].rt
                     perception_response.duration = _perception_response_allKeys[-1].duration
+                    # was this correct?
+                    if (perception_response.keys == str(correct_response)) or (perception_response.keys == correct_response):
+                        perception_response.corr = 1
+                    else:
+                        perception_response.corr = 0
                     # a response ends the routine
                     continueRoutine = False
             
@@ -1519,40 +1638,17 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
         thisExp.addData('perception.stopped', globalClock.getTime())
-        # Run 'End Routine' code from perception_code
-        for component in screen_components:
-            component.setAutoDraw(False)
-            
-        thisExp.addData("target_present", target_present)
-        if target_present == True:
-            if perception_response.keys == 'right':
-                correct_response = 1
-                thisExp.addData("correct_response", 1)
-            elif perception_response.keys == 'left':
-                correct_response = 0
-                thisExp.addData("correct_response", 0)
-            else:
-                print("response key is something else than left or right")
-                thisExp.addData("correct_response", "error")
-        elif target_present == False:
-            if perception_response.keys == 'right':
-                correct_response = 0
-                thisExp.addData("correct_response", 0)
-            elif perception_response.keys == 'left':
-                correct_response = 1
-                thisExp.addData("correct_response", 1)
-            else:
-                print("response key is something else than left or right")
-                thisExp.addData("correct_response", "error")
-        else:
-            print("target is not present or absent")
-            thisExp.addData("correct_response", "target error")
-         
-        screen_components = []
         # check responses
         if perception_response.keys in ['', [], None]:  # No response was made
             perception_response.keys = None
+            # was no response the correct answer?!
+            if str(correct_response).lower() == 'none':
+               perception_response.corr = 1;  # correct non-response
+            else:
+               perception_response.corr = 0;  # failed to respond (incorrectly)
+        # store data for perception_loop (TrialHandler)
         perception_loop.addData('perception_response.keys',perception_response.keys)
+        perception_loop.addData('perception_response.corr', perception_response.corr)
         if perception_response.keys != None:  # we had a response
             perception_loop.addData('perception_response.rt', perception_response.rt)
             perception_loop.addData('perception_response.duration', perception_response.duration)
@@ -1560,13 +1656,13 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         if routineForceEnded:
             routineTimer.reset()
         else:
-            routineTimer.addTime(-8.000000)
+            routineTimer.addTime(-10.000000)
         thisExp.nextEntry()
         
         if thisSession is not None:
             # if running in a Session with a Liaison client, send data up to now
             thisSession.sendExperimentData()
-    # completed 3.0 repeats of 'perception_loop'
+    # completed 1.0 repeats of 'perception_loop'
     
     
     # --- Prepare to start Routine "thank_you" ---
